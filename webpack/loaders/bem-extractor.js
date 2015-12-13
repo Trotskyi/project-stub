@@ -25,7 +25,10 @@ module.exports = function (content, map) {
   const query = loaderUtils.parseQuery(this.query);
 
   if (!query.tech) {
-    return void callback(new Error(`Should specify tech for ${path.basename(__filename)}`));
+    if(!this.options.bemTechs) {
+        return void callback(new Error(`Should specify tech for ${path.basename(__filename)}`));
+    }
+
   }
 
   let tech = query.tech;

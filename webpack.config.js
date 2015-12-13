@@ -15,12 +15,16 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js/,
+                test: /\.js$/,
                 loader: 'ymodules-loader'
             },
             {
                 test: /\.bemjson.js$/,
-                loader: 'loaders/bem-extractor?tech[]=bh.js&tech[]=js&tech[]=styl!loaders/bemjson'
+                loader: 'loaders/bem-extractor?tech[]=bh.js&tech[]=js&tech[]=styl&tech[]=deps.js!loaders/bemjson'
+            },
+            {
+                test: /\.deps.js$/,
+                loader: 'loaders/bem-extractor?tech[]=bh.js&tech[]=js&tech[]=styl&tech[]=deps.js!loaders/deps'
             },
             {
                 test: /\.styl$/,

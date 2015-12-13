@@ -20,6 +20,13 @@ const levels = [
 });
 
 
+function collectDeps(deps, visited, levels) {
+    bemdeclToFs(deps, levels, 'deps.js').then(files => {
+        return files.forEach();
+    });
+}
+
+
 /**
  * @param  {Object} bemjson
  */
